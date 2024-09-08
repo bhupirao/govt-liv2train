@@ -20,8 +20,9 @@ You can find the repository [here](https://github.com/bhupirao/govt-liv2train.gi
 ### Prerequisites
 
 - Java 17 or higher
-- Maven or Gradle
-- PostgreSQL database
+- Maven
+- Spring Boot
+- MySQL database
 
 ### Clone the Repository
 
@@ -31,26 +32,27 @@ git clone https://github.com/bhupirao/govt-liv2train.git
 cd govt-liv2train
 
 Configure Database
-Install PostgreSQL and create a database for the application.
+Install MySQL and create a database for the application.
 
-Update the application.properties file with your PostgreSQL database credentials:
+Update the application.properties file with your MySQL database credentials:
 
 properties
 
-spring.datasource.url=jdbc:postgresql://localhost:5432/your_database_name
-spring.datasource.username=your_username
-spring.datasource.password=your_password
+# MySQL properties
+spring.datasource.url=jdbc:mysql://localhost:3306/liv2train_db
+spring.datasource.username=root
+spring.datasource.password=Root@0000
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA properties
 spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
 Build and Run the Application
-Maven:
-
 mvn clean install
 mvn spring-boot:run
-Gradle:
 
-./gradlew build
-./gradlew bootRun
 Access the API
 Base URL: http://localhost:8080/api/training-centers
 Endpoints
