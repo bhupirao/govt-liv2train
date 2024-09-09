@@ -23,6 +23,18 @@ You can find the repository [here](https://github.com/bhupirao/govt-liv2train.gi
 - Maven
 - Spring Boot
 - MySQL database
+# Access the API
+Base URL: http://localhost:8080/api/training-centers
+
+# Endpoints
+Create a Training Center:
+
+# POST /api/training-centers/addCenter
+Request Body: A JSON object representing a training center.
+Get All Training Centers:
+
+# GET /api/training-centers/search
+Optional query parameters for filtering: centerName, centerCode, city, state.
 
 ### Clone the Repository
 
@@ -53,31 +65,22 @@ Build and Run the Application
 mvn clean install
 mvn spring-boot:run
 
-Access the API
-Base URL: http://localhost:8080/api/training-centers
-Endpoints
-Create a Training Center:
 
-POST /api/training-centers
-Request Body: A JSON object representing a training center.
-Get All Training Centers:
 
-GET /api/training-centers
-Optional query parameters for filtering: centerName, centerCode, city, state.
-Exception Handling
+# Exception Handling
 The application includes custom exception handling for:
 
-Validation errors
-Constraint violations
-Resource not found
-Data integrity violations
-General exceptions
-Contribution
-Feel free to contribute to this project by submitting issues or pull requests.
+- Validation errors
+- Constraint violations
+- Resource not found
+- Data integrity violations
+- General exceptions
+  
+# Contact
+For any questions or issues, please reach out to bhoopsinghyadav26@gmail.com.
 
-License
+# License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Contact
-For any questions or issues, please reach out to bhoopsinghyadav26@gmail.com.
+
 
