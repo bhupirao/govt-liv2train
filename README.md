@@ -30,11 +30,72 @@ Base URL: http://localhost:8080/api/training-centers
 Create a Training Center:
 
 # POST /api/training-centers/addCenter
-Request Body: A JSON object representing a training center.
+
+# Request Body:
+
+{
+  "centerName": "Central Training Hub",
+  "centerCode": "CTH202401",
+  "address": {
+    "detailedAddress": "123 Main Street",
+    "city": "Metropolis",
+    "state": "Stateville",
+    "pincode": "123456"
+  },
+  "studentCapacity": 100,
+  "coursesOffered": ["Java", "Python", "JavaScript"],
+  "contactEmail": "contact@centraltraininghub.com",
+  "contactPhone": "1234567890"
+}
+# Response:
+
+Status Code: 200 OK
+
+# Response Body:
+{
+  "id": 1,
+  "centerName": "Central Training Hub",
+  "centerCode": "CTH202401",
+  "address": {
+    "detailedAddress": "123 Main Street",
+    "city": "Metropolis",
+    "state": "Stateville",
+    "pincode": "123456"
+  },
+  "studentCapacity": 100,
+  "coursesOffered": ["Java", "Python", "JavaScript"],
+  "createdOn": "2024-09-08T15:30:00",
+  "contactEmail": "contact@centraltraininghub.com",
+  "contactPhone": "1234567890"
+}
+
 Get All Training Centers:
 
 # GET /api/training-centers/search
 Optional query parameters for filtering: centerName, centerCode, city, state.
+# Request Body
+ No Request Body 
+ # Response: 
+Status Code: 200 OK 
+# Response Body
+[
+  {
+    "id": 1,
+    "centerName": "Central Training Hub",
+    "centerCode": "CTH202401",
+    "address": {
+      "detailedAddress": "123 Main Street",
+      "city": "Metropolis",
+      "state": "Stateville",
+      "pincode": "123456"
+    },
+    "studentCapacity": 100,
+    "coursesOffered": ["Java", "Python", "JavaScript"],
+    "createdOn": "2024-09-08T15:30:00",
+    "contactEmail": "contact@centraltraininghub.com",
+    "contactPhone": "1234567890"
+  }
+]
 
 ### Clone the Repository
 
