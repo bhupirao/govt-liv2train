@@ -19,13 +19,13 @@ public class TrainingCenterController {
     @Autowired
     private TrainingCenterService trainingCenterService;
 
-    @PostMapping
+    @PostMapping("/addCenter")
     public ResponseEntity<TrainingCenter> createTrainingCenter(@Valid @RequestBody TrainingCenter trainingCenter) {
         TrainingCenter savedCenter = trainingCenterService.createTrainingCenter(trainingCenter);
         return ResponseEntity.ok(savedCenter);
     }
 
-    @GetMapping
+    @GetMapping("/search")
     public ResponseEntity<List<TrainingCenter>> getAllTrainingCenters(
             @RequestParam(required = false) String centerName,
             @RequestParam(required = false) String centerCode,
